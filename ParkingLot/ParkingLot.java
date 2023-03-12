@@ -1,7 +1,7 @@
 import java.util.*;
 import java.time.LocalTime;
 public class ParkingLot {
-    List<Slot> bikes, car, trucks;
+    List<Slot> bikes, cars, trucks;
 
     ParkingLot() {
         bikes = new ArrayList<>();
@@ -17,16 +17,16 @@ public class ParkingLot {
 
     public Ticket park(Vehicle vehicle) {
         Slot freeSlot = null;
-        if ( vehicle instanceOf Bike ) {
+        if ( vehicle instanceof Bike ) {
             freeSlot = findSlot("Bike");
-        } else ( vehicle instanceOf car ) {
+        } else if( vehicle instanceof Car ) {
             freeSlot = findSlot("Car");
         } else {
             freeSlot = findSlot("Truck");
         }
         if ( freeSlot == null ) {
             System.out.println("No Slot Available");
-            return;
+            return null;
         }
         return new Ticket(vehicle, freeSlot);
     }
@@ -41,8 +41,8 @@ public class ParkingLot {
     }
 
     public double unpark(Ticket ticket) {
-        double amount = (LocalTime.now().getHour() - ticket.entryTime.getHour()) * ticket.vehicle.parkingPrice;
-        ticket.slot.unpark;
+        double amount = (LocalTime.now().getSecond() - ticket.entryTime.getSecond()) * ticket.vehicle.parkingPrice;
+        ticket.slot.unpark();
         return amount;
     }
 }
