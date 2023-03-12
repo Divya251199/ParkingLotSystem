@@ -14,4 +14,3 @@ public class Slot {
         this.vehicle = null;
     }
 } 
-// Vehicle vehicle = new Bike("DL45k5875", "Rajesh");
