@@ -1,7 +1,7 @@
 public abstract class Vehicle {
     private String ownerName;
     private String number;
-    int parkingPrice;
+    int parkingPrice = 10;
 
     public Vehicle(String vehicleNo, String ownerName) {
         this.number = number;
