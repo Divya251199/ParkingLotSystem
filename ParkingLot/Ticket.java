@@ -16,6 +16,3 @@ public class Ticket {
         return  sb.toString();
     }
 }
-
-// We've imported time class from java
-// now is static function as we didn't have to create object for it we can use it directly by class.now();
